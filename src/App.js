@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+// import UseEffectPlayground from './components/useEffect-playground'
+// import LocalStoragePlayground from './components/localStorage-playground'
+// import ControlledComp from './components/controlled-comp'
+import ToDoList from './components/to-do-list'
+// import RatingStar from './components/rating'
+// import MemoryGame from './components/memory-game'
+// import SampleData from './components/sample-data'
+// import TicTacToe from './components/tic-tac-toe'
+// import BinaryConverter from './components/binary/index'
+// import LanguageSelector from './components/language-picker'
+// import StatusPicker from './components/status-picker'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <LanguageSelector/> */}
+      {/* <BinaryConverter /> */}
+      {/* <TicTacToe /> */}
+      {/* <SampleData /> */}
+      {/* <MemoryGame /> */}
+      {/* <RatingStar /> */}
+      {/* <ControlledComp /> */}
+      <ToDoList />
+      {/* <UseEffectPlayground /> */}
+      {/* <UseEffectPlayground /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
