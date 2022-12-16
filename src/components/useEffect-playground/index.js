@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 export default function UseEffectPlayground() {
@@ -20,31 +21,33 @@ const ChildComponent = () => {
   const [counter, setCounter] = useState(0)
   const [inputValue, setInputValue] = useState('')
 
-  //   useEffect(() => {
-  //     console.log('child comp mounted')
+    // useEffect(() => {
+    //   console.log('child comp mounted')
 
-  //     return () => {
-  //       console.log('unmounted')
-  //     }
-  //   }, [])
+    //   return () => {
+    //     console.log('unmounted')
+    //   }
+    // }, [])
 
-  //   useEffect(() => {
-  //     console.log('counter state updated', counter)
-  //   }, [counter])
+    // useEffect(() => {
+    //   console.log('counter state updated', counter)
+    // }, [counter])
 
-  //   useEffect(() => {
-  //     console.log('on every render')
-  //   })
-
-  // dangerous use case
-  //   useEffect(() => {
-  //     setCounter((prevC) => prevC + 1)
-  //   })
+      // useEffect(() => {
+      //   console.log('on every render')
+      // })
 
   // dangerous use case
-//   useEffect(() => {
-//     setCounter((prevC) => prevC + 1)
-//   }, [counter])
+    // useEffect(() => {
+    //   // axios
+    //   //       .get('https://api.chucknorris.io/jokes/random')
+    //   setCounter((prevC) => prevC + 1)
+    // })
+
+  // dangerous use case
+  // useEffect(() => {
+  //   setCounter((prevC) => prevC + 1)
+  // }, [counter])
 
   return (
     <div>
