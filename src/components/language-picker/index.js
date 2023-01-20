@@ -12,10 +12,10 @@ const LanguageSelecter = () => {
     const [currFlag, setCurrFlag] = useState('')
     return(
         <div className="border">
-            <div>
+            <div style={{display: 'flex' , justifyContent: 'center'}}>
                 {currFlag !== '' ? <img src={currFlag.source} alt='' height='175' width='350'/> : 'Select Your Language'}
             </div>
-        <div className="bottom-flags">
+        <div className="bottom-flags" style={{display: 'flex' , justifyContent: 'center'}}>
             {flaglist.map((flag)=>{
                 return(flag.name !== currFlag.name ? 
                 <button onClick={()=>{

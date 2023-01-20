@@ -1,0 +1,61 @@
+.Container{
+    background-image: url("https://images-cdn.kahoot.it/acf73135-050e-4126-b172-d0dbb436012e?auto=webp?auto=webp&width=1800");
+    height: 100vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+}
+.QuestionContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: xx-large;
+    border:1px solid white;
+    border-radius: 5px;
+}
+.NextButton{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    height: 50%;
+
+} 
+.pages{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-content:flex-start;
+
+}
+.Abutton{
+    color: white;
+    /* border: 1px solid black; */
+    box-shadow: 10px 10px 8px hsl(0, 0%, 0%);
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    font-style:normal;
+
+}
+.ResultBannar{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 10%;
+}
+.timer{
+    font-size: 50px;
+    color: red;
+}

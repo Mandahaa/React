@@ -3,7 +3,7 @@ import React, {useState} from "react";
 function Fireworks(){
     const[isExploded, setIsExploded] = useState(false)
 
-    return <div>
+    return <div style={{display: 'flex', justifyContent: 'center'}}>
         <button onClick={()=>{
             setIsExploded((currState)=>{
                 return !currState

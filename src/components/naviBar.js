@@ -16,6 +16,11 @@ function NaviBar (){
             <button onClick={()=>{navigate('/fireworks')}}> Fire Works </button>
             <button onClick={()=>{navigate('/counter')}}> Counter</button>
             <button onClick={()=>{navigate('/shopping-list')}}>Shopping List</button>
+            <button onClick={()=>{navigate('/todolist')}}>ToDo List</button>
+            <button onClick={()=>{navigate('/use-reducer')}}>Use Reducer</button>
+            <button onClick={()=>{navigate('/kahoot')}}> Kahoot </button>
+            <button onClick={()=>{navigate('/translate')}}> Translate </button>
+
             <Outlet/>
         </div>
     )
