@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import "./index.css"
 import { SwapOutlined } from "@ant-design/icons"
 import { Button } from "antd"
+import { json, useFetcher } from "react-router-dom"
 
 export default function Translate() {
   const [inputText, setInputText] = useState("")
@@ -11,15 +12,40 @@ export default function Translate() {
   const [translatedText, setTranslatedText] = useState("")
   const [langs, setLangs] = useState({ lang1: "en", lang2: "en" })
   const [detects, setDetects] = useState([])
-  const [usedInput, setUsedInput] = useState("")
-
+  const [usedInput, setUsedInput] = useState(localStorage.getItem('searchedWords') ?
+  JSON.parse(localStorage.getItem('searchedWords'))
+  : [])
 
   useEffect(() => {
     axios.get("https://libretranslate.de/languages").then((res) => {
       return setLanguageLists(res.data)
     })
   }, [])
-  const onTranslate = () => {
+
+  useEffect(()=>{
+    //  console.log(JSON.parse(localStorage.getItem('searchedWords')).includes(inputText))
+    // if(JSON.parse(localStorage.getItem('searchedWords')).includes(inputText))
+    localStorage.setItem('searchedWords',JSON.stringify(usedInput))
+    // else
+    // alert("ene ug bn")
+  },[usedInput])
+  const onDetect = () => {
+    const formData = new FormData()
+
+    formData.append("q", inputText) //text to detect
+    formData.append("api_key", "")
+
+    axios.post("https://libretranslate.de/detect", formData).then((res) => {
+      setDetects(res.data)
+      console.log(res.data)
+    })
+    alert(`select : ${detects[0].language}`)
+    alert(`${detects[0].confidence}% confident`)
+  }
+  const OnSwap = () => {
+    console.log("hi")
+  }
+const onTranslate = () => {
 
     const formData = new FormData()
 
@@ -33,26 +59,16 @@ export default function Translate() {
       .post("https://libretranslate.de/translate", formData)
       .then((response) => {
         setTranslatedText(response.data.translatedText)
+        
       })
-    const onDetect = () => {
-      const formData = new FormData()
-
-      formData.append("q", inputText) //text to detect
-      formData.append("api_key", "")
-
-      axios.post("https://libretranslate.de/detect", formData).then((res) => {
-        setDetects(res.data)
-        console.log(res.data)
-      })
-      alert(`select : ${detects[0].language}`)
-      alert(`${detects[0].confidence}% confident`)
-    }
-    const OnSwap = () => {
-      console.log("hi")
-    }
-
+    
+  }
     return (
       <div className="body">
+        <div>{
+          usedInput.map((input,id)=>{
+            return<div>{input}</div>
+          })}</div>
         <div className="container">
           <div className="wrapper">
             <div className="text-input">
@@ -60,6 +76,12 @@ export default function Translate() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     onTranslate()
+                   setUsedInput((currState)=>{
+                    return[
+                      ...currState,
+                      inputText
+                    ]
+                   }) 
                   }
                 }}
                 type={"text"}
@@ -142,6 +164,12 @@ export default function Translate() {
           <button
             onClick={() => {
               onTranslate()
+              setUsedInput((currState)=>{
+                return[
+                  ...currState,
+                  inputText
+                ]
+               })
             }}
           >
             Translate
@@ -161,5 +189,5 @@ export default function Translate() {
         </div>
       </div>
     )
-  }
+  
 }
