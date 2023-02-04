@@ -10,7 +10,7 @@ function EmployeeTable() {
       .then((res) => {
         if (res.status === 200) {
           setInfo(res.data);
-          console.log(res.data);
+          // console.log(res.data);
         }
       });
   }, []);
@@ -18,7 +18,7 @@ function EmployeeTable() {
   return (
     <div>
       <div>
-        <pre>{JSON.stringify(infos, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(infos, null, 2)}</pre> */}
       </div>
       <table>
         <thead>
@@ -71,11 +71,11 @@ function EmployeeTable() {
                   </div>
                 </td>
               </tr>
-            );
+            )
           })}
         </tbody>
       </table>
     </div>
-  );
+  )
 }
 export default EmployeeTable;

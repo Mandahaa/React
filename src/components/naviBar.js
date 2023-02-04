@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Outlet, useNavigate } from "react-router-dom";
 
 function NaviBar (){
@@ -20,6 +19,7 @@ function NaviBar (){
             <button onClick={()=>{navigate('/use-reducer')}}>Use Reducer</button>
             <button onClick={()=>{navigate('/kahoot')}}> Kahoot </button>
             <button onClick={()=>{navigate('/translate')}}> Translate </button>
+            <button onClick={()=>{navigate('/doglists')}}> Interview2 </button>
 
             <Outlet/>
         </div>
