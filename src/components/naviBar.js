@@ -19,7 +19,8 @@ function NaviBar (){
             <button onClick={()=>{navigate('/use-reducer')}}>Use Reducer</button>
             <button onClick={()=>{navigate('/kahoot')}}> Kahoot </button>
             <button onClick={()=>{navigate('/translate')}}> Translate </button>
-            <button onClick={()=>{navigate('/doglists')}}> Interview2 </button>
+            <button onClick={()=>{navigate('/interview2')}}> Interview2 </button>
+            <button onClick={()=>{navigate('/users')}}> Users </button>
 
             <Outlet/>
         </div>

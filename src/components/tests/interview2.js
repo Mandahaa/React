@@ -123,7 +123,7 @@ function reducer(state, action) {
 }
 function DogLists() {
 
-  const [state, dispatch] = useReducer(reducer, lists)
+  const [dogs, updateDogs] = useReducer(reduceList, lists)
 
   return (
     <div>

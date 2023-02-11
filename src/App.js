@@ -33,6 +33,7 @@ import TodoListWithUseReducer from "./components/useReducer"
 import Kahoot from "./components/kahoot"
 import Translate from "./components/translator"
 import DogLists from "./components/tests/interview2"
+import Users from "./components/practice/useReducer-with-api-practice"
 
 // import Homework from './homework'
 
@@ -61,6 +62,8 @@ function App() {
             <Route path="kahoot" element={<Kahoot />} />
             <Route path="translate" element={<Translate />} />
             <Route path="interview2" element={<DogLists />} />
+            <Route path="users" element={<Users />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
